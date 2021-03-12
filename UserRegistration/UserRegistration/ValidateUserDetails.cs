@@ -8,9 +8,15 @@ namespace UserRegistration
     class ValidateUserDetails
     {
         public static string REGEX_FIRSTNAME = "^[A-Z][a-z]{2,}$";
+        public static string REGEX_LASTNAME = "^[A-Z][a-z]{2,}$";
        public bool validateFirstName(string firstName)
         {           
             return Regex.IsMatch(firstName , REGEX_FIRSTNAME);
+        }
+
+        public bool validateLastName(string lastName)
+        {
+            return Regex.IsMatch(lastName,REGEX_LASTNAME);
         }
     }
 }
