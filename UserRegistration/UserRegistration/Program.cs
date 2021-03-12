@@ -6,7 +6,8 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome To User Registration Problem");
+            ValidateUserDetails validateUserDetails = new ValidateUserDetails();
+            Console.WriteLine("Your Match :" + validateUserDetails.validateFirstName("Neha"));            
         }
     }
 }
