@@ -10,7 +10,8 @@ namespace UserRegistration
         public static string REGEX_FIRSTNAME = "^[A-Z][a-z]{2,}$";
         public static string REGEX_LASTNAME = "^[A-Z][a-z]{2,}$";
         public static string REGEX_EMAIL = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
-        public static string REGEX_PHONENUMBER = "^(91[ ])?[7-9][0-9]{9}$"; //91 9919819801
+        public static string REGEX_PHONENUMBER = "^(91[ ])?[7-9][0-9]{9}$";
+        public static string REGEX_PASSWORD = "^([a-zA-Z0-9@#.]){8,}$";
         public bool validateFirstName(string firstName)
         {           
             return Regex.IsMatch(firstName , REGEX_FIRSTNAME);
@@ -28,6 +29,11 @@ namespace UserRegistration
         {
             return Regex.IsMatch(phoneNumber, REGEX_PHONENUMBER);
         }
+        public bool validatePassword(string password)
+        {
+            return Regex.IsMatch(password, REGEX_PASSWORD);
+        }
+
     }
 }
 
