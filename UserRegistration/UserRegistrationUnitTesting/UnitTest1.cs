@@ -52,5 +52,15 @@ namespace UserRegistrationUnitTesting
             Assert.AreEqual(expectedResult, result);
         }
 
+        [TestMethod]
+        public void Test_Password()
+        {
+            //Act
+            bool result = validateUserDetails.validatePassword("Neha12348");
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
     }
 }
