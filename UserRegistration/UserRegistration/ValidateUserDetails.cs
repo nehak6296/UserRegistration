@@ -5,17 +5,14 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
-    class ValidateUserDetails
+   public class ValidateUserDetails
     {
-        
-        public static string REGEX_EMAIL = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
-        
-        public bool validateEmail(string mail)
+        public static string REGEX_FIRSTNAME = "^[A-Z][a-z]{2,}$";
+        public bool validateFirstName(string firstName)
         {
-            return Regex.IsMatch(mail, REGEX_EMAIL);
+            return Regex.IsMatch(firstName, REGEX_FIRSTNAME);
         }
-        
-
     }
 }
+
 
