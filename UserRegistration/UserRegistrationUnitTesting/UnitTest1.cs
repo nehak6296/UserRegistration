@@ -41,5 +41,16 @@ namespace UserRegistrationUnitTesting
             //Assert
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestMethod]
+        public void Test_Phone_Number()
+        {
+            //Act
+            bool result = validateUserDetails.validatePhoneNumber("91 9919819801");
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
     }
 }
