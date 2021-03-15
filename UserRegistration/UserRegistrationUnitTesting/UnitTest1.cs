@@ -62,5 +62,15 @@ namespace UserRegistrationUnitTesting
             Assert.AreEqual(expectedResult, result);
         }
 
+        [TestMethod]
+        public void Test_Password_1UpperCase()
+        {
+            //Act
+            bool result = validateUserDetails.validatePassword("NehaK12348");
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
     }
 }
