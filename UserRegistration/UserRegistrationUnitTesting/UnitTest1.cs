@@ -30,5 +30,16 @@ namespace UserRegistrationUnitTesting
             //Assert
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestMethod]
+
+        public void Test_Email()
+        {
+            //Act
+            bool result = validateUserDetails.validateEmail("abc.xyz@bl.co.in");
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
