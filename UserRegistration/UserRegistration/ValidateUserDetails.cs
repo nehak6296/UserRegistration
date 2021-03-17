@@ -31,14 +31,14 @@ namespace UserRegistration
                 }
                 if (firstName.Equals(string.Empty))
                 {
-                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "Name cant be empty");
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_NAME, "Name can't be empty");
 
                 }
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING,"Invalid Name");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_NAME,"Invalid Name");
             }
             catch (NullReferenceException)
             {
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING, "Name cant be null");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_NAME, "Name can't be null");
 
             }
             
@@ -53,13 +53,13 @@ namespace UserRegistration
                 }
                 else if (lastName.Equals(string.Empty))
                 {
-                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "Last name cant be empty");
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_NAME, "Last name cant be empty");
                 }
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING,"Invalid Last Name");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_NAME,"Invalid Last Name");
             }
             catch
             {
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING, "LastName is never null");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_NAME, "LastName is never null");
             }
         }
         public bool ValidateEmail(string mail)
@@ -72,13 +72,13 @@ namespace UserRegistration
                 }
                 else if (mail.Equals(string.Empty))
                 {
-                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "Mail cant be Empty");
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_EMAIL, "Mail can't be Empty");
                 }
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING, "Invalid Mail");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_EMAIL, "Invalid Mail");
             }
             catch
             {
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING,"Mail cant be Null");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_EMAIL,"Mail can't be Null");
             }
         }
         public bool ValidatePhoneNumber(string phoneNumber)
@@ -91,13 +91,13 @@ namespace UserRegistration
                 }
                 else if (phoneNumber.Equals(string.Empty))
                 {
-                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "PhoneNumber cant be Empty");
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_PHONE_NUMBER, "PhoneNumber cant be Empty");
                 }
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING, "Invalid Phone Number");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_PHONE_NUMBER, "Invalid Phone Number");
             }
             catch
             {
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING,"PhoneNumber cant be nul");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_PHONE_NUMBER,"PhoneNumber cant be nul");
             }
         }
 
@@ -111,12 +111,12 @@ namespace UserRegistration
                 }
                 else if(password.Equals(string.Empty))
                 {
-                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING,"Password cant be empty");
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_PASSWORD,"Password cant be empty");
                 }
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING,"Invlid Password");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_PASSWORD,"Invlid Password");
             }catch
             {
-                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING,"Password cant be Null");
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_PASSWORD,"Password cant be Null");
             }
         }
     }

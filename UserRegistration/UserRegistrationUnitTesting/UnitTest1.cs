@@ -11,7 +11,7 @@ namespace UserRegistrationUnitTesting
         bool expectedResult = true;
 
         [TestMethod]
-        public void Test_First_Name()
+        public void GivenFirstName_WhenValidate_Then_ReturnTrue()
         {
             //Act        
             bool result = validateUserDetails.ValidateFirstName("Neha");
@@ -22,7 +22,7 @@ namespace UserRegistrationUnitTesting
 
         [TestMethod]
 
-        public void Test_Last_Name()
+        public void GivenLastName_WhenValidate_Then_ReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidateLastName("Kotarwar");
@@ -33,7 +33,7 @@ namespace UserRegistrationUnitTesting
 
         [TestMethod]
 
-        public void Test_Email()
+        public void GivenEmail_WhenValidate_Then_ReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidateEmail("abc.xyz@bl.co.in");
@@ -43,7 +43,7 @@ namespace UserRegistrationUnitTesting
         }
 
         [TestMethod]
-        public void Test_Phone_Number()
+        public void GivenPhoneNumber_WhenValidate_ThenReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidatePhoneNumber("91 9919819801");
@@ -53,7 +53,7 @@ namespace UserRegistrationUnitTesting
         }
 
         [TestMethod]
-        public void Test_Password()
+        public void GivenPassword_WhenValidate_ThenReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidatePassword("Neha@12348");
@@ -63,7 +63,7 @@ namespace UserRegistrationUnitTesting
         }
 
         [TestMethod]
-        public void Test_Password_1UpperCase()
+        public void GivenPasswordUpperCase_WhenValidate_Then_ReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidatePassword("Neha@K12348");
@@ -73,7 +73,7 @@ namespace UserRegistrationUnitTesting
         }
 
         [TestMethod]
-        public void Test_Password_1Number()
+        public void GivenPasswordDigit_WhenValidate_Then_ReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidatePassword("Neha@12348");
@@ -83,7 +83,7 @@ namespace UserRegistrationUnitTesting
         }
 
         [TestMethod]
-        public void Test_Password_1SpecialCharacter()
+        public void GivenPasswordSpecialCharacter_WhenValidate_Then_ReturnTrue()
         {
             //Act
             bool result = validateUserDetails.ValidatePassword("Neha@1234");
@@ -93,7 +93,7 @@ namespace UserRegistrationUnitTesting
         }
 
         [TestMethod]
-        public void Test_Multiple_Emails()
+        public void GivenMultipleEmails_WhenValidate_Then_ReturnTrue()
         {
             //Act
 
