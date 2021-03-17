@@ -13,25 +13,111 @@ namespace UserRegistration
         public static string REGEX_PHONENUMBER = "^(91[ ])?[7-9][0-9]{9}$";
         public string REGEX_PASSWORD = "(?=.*[A-Z])(?=.*[0-9])(?=.*?[@#$%^&*?]){8,}";
 
-        public bool validateFirstName(string firstName)
+        private string message;
+        public ValidateUserDetails()
         {
-            return Regex.IsMatch(firstName, REGEX_FIRSTNAME);
         }
-        public bool validateLastName(string lastName)
+        public ValidateUserDetails(string message)
         {
-            return Regex.IsMatch(lastName, REGEX_LASTNAME);
+            this.message = message;
         }
-        public bool validateEmail(string mail)
+        public bool ValidateFirstName(string firstName)
         {
-            return Regex.IsMatch(mail, REGEX_EMAIL);
+            try
+            {
+                if (Regex.IsMatch(firstName, REGEX_FIRSTNAME))
+                {
+                    return true;
+                }
+                if (firstName.Equals(string.Empty))
+                {
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "Name cant be empty");
+
+                }
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING,"Invalid Name");
+            }
+            catch (NullReferenceException)
+            {
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING, "Name cant be null");
+
+            }
+            
+        }       
+        public bool ValidateLastName(string lastName)
+        {
+            try
+            {
+                if (Regex.IsMatch(lastName, REGEX_LASTNAME))
+                {
+                    return true;
+                }
+                else if (lastName.Equals(string.Empty))
+                {
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "Last name cant be empty");
+                }
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING,"Invalid Last Name");
+            }
+            catch
+            {
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING, "LastName is never null");
+            }
         }
-        public bool validatePhoneNumber(string phoneNumber)
+        public bool ValidateEmail(string mail)
         {
-            return Regex.IsMatch(phoneNumber, REGEX_PHONENUMBER);
+            try
+            {
+                if (Regex.IsMatch(mail, REGEX_EMAIL))
+                {
+                    return true;
+                }
+                else if (mail.Equals(string.Empty))
+                {
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "Mail cant be Empty");
+                }
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING, "Invalid Mail");
+            }
+            catch
+            {
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING,"Mail cant be Null");
+            }
         }
-        public bool validatePassword(string password)
+        public bool ValidatePhoneNumber(string phoneNumber)
         {
-            return Regex.IsMatch(password, REGEX_PASSWORD);
+            try
+            {
+                if (Regex.IsMatch(phoneNumber, REGEX_PHONENUMBER))
+                {
+                    return true;
+                }
+                else if (phoneNumber.Equals(string.Empty))
+                {
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING, "PhoneNumber cant be Empty");
+                }
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING, "Invalid Phone Number");
+            }
+            catch
+            {
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING,"PhoneNumber cant be nul");
+            }
+        }
+
+        public bool ValidatePassword(string password)
+        {
+            try
+            {
+                if( Regex.IsMatch(password, REGEX_PASSWORD))
+                {
+                    return true;
+                }
+                else if(password.Equals(string.Empty))
+                {
+                    throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_STRING,"Password cant be empty");
+                }
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_STRING,"Invlid Password");
+            }catch
+            {
+                throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.NULL_STRING,"Password cant be Null");
+            }
         }
     }
 }
