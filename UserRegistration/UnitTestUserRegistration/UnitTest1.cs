@@ -13,7 +13,7 @@ namespace UnitTestUserRegistration
         {
             bool expectedResult = true;
             //Act
-            bool result = validateUserDetails.validateFirstName("Neha");
+            bool result = validateUserDetails.ValidateFirstName("Neha");
 
             //Assert
             Assert.AreEqual(expectedResult,result);

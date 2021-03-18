@@ -118,6 +118,221 @@ namespace UserRegistrationUnitTesting
             Assert.AreEqual(expectedResult, result_Eight);
             Assert.AreEqual(expectedResult, result_Nine);
         }
-                
+
+        [TestMethod]
+        public void GivenEmptyFirstName_WhenValidate_ThenThrowCustomEmptyFirstNameException()
+        {
+            try
+            {
+                string firstName = "";
+                bool result = validateUserDetails.ValidateFirstName(firstName);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Empty First Name", e.Message);
+            }
+           
+        }
+
+        [TestMethod]
+        public void GivenInvalidFirstName_WhenValidate_ThenThrowCustomInvalidFirstNameException()
+        {
+            try
+            {
+                string firstName = "neha";
+                bool result = validateUserDetails.ValidateFirstName(firstName);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Invalid First Name", e.Message);
+            }
+
+        }
+
+        [TestMethod]
+        public void GivenNullFirstName_WhenValidate_ThenThrowCustomNullFirstNameException()
+        {
+            try
+            {
+                string firstName = null;
+                bool result = validateUserDetails.ValidateFirstName(firstName);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Null First Name", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenEmptyLastName_WhenValidate_ThenThrowCustomEmptyLastNameException()
+        {
+            try
+            {
+                string lastName = "";
+                bool result = validateUserDetails.ValidateLastName(lastName);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Empty Last Name", e.Message);
+            }
+
+        }
+        
+
+        [TestMethod]
+        public void GivenInvalidLastName_WhenValidate_ThenThrowCustomInvalidLastNameException()
+        {
+            try
+            {
+                string lastName = "kotarwar";
+                bool result = validateUserDetails.ValidateLastName(lastName);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Invalid Last Name", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenNullLastName_WhenValidate_ThenThrowCustomNullLastNameException()
+        {
+            try
+            {
+                string lastName = null;
+                bool result = validateUserDetails.ValidateLastName(lastName);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Null Last Name", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenEmptyMail_WhenValidate_ThenThrowCustomEmptyMailException()
+        {
+            try
+            {
+                string mail = "";
+                bool result = validateUserDetails.ValidateEmail(mail);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Empty Mail", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenInvalidMail_WhenValidate_ThenThrowCustomInvalidMailException()
+        {
+            try
+            {
+                string mail = "neha@g.c";
+                bool result = validateUserDetails.ValidateEmail(mail);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Invalid Mail", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenNullMail_WhenValidate_ThenThrowCustomNullMailException()
+        {
+            try
+            {
+                string mail = null;
+                bool result = validateUserDetails.ValidateEmail(mail);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Null Mail", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenEmptyPhoneNumber_WhenValidate_ThenThrowCustomEmptyPhoneNumberException()
+        {
+            try
+            {
+                string phoneNumber = "";
+                bool result = validateUserDetails.ValidatePhoneNumber(phoneNumber);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Empty Phone Number", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenInvalidPhoneNumber_WhenValidate_ThenThrowCustomInvalidPhoneNumberException()
+        {
+            try
+            {
+                string phoneNumber = "63563";
+                bool result = validateUserDetails.ValidatePhoneNumber(phoneNumber);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Invalid Phone Number", e.Message);
+            }
+
+        }
+
+        [TestMethod]
+        public void GivenNullPhoneNumber_WhenValidate_ThenThrowCustomNullPhoneNumberException()
+        {
+            try
+            {
+                string phoneNumber = null;
+                bool result = validateUserDetails.ValidatePhoneNumber(phoneNumber);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Null Phone Number", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenEmptyPassword_WhenValidate_ThenThrowCustomEmptyPasswordException()
+        {
+            try
+            {
+                string password = "";
+                bool result = validateUserDetails.ValidatePassword(password);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Empty Password", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenInvalidPassword_WhenValidate_ThenThrowCustomInvalidPasswordException()
+        {
+            try
+            {
+                string password = "nn23424";
+                bool result = validateUserDetails.ValidatePassword(password);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Invalid Password", e.Message);
+            }
+
+        }
+        [TestMethod]
+        public void GivenNullPassword_WhenValidate_ThenThrowCustomNullPasswordException()
+        {
+            try
+            {
+                string password = null;
+                bool result = validateUserDetails.ValidatePassword(password);
+            }
+            catch (ValidateUserDetailsCustomException e)
+            {
+                Assert.AreEqual("Null Password", e.Message);
+            }
+
+        }
     }
 }
