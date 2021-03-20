@@ -13,6 +13,14 @@ namespace UserRegistration
         public static string REGEX_PHONENUMBER = "^(91[ ])?[7-9][0-9]{9}$";
         public string REGEX_PASSWORD = "(?=.*[A-Z])(?=.*[0-9])(?=.*?[@#$%^&*?]){8,}";
 
+        public bool ValidateFirstName(string firstName) => Regex.IsMatch(firstName, REGEX_FIRSTNAME);
+        public bool ValidateLastName(string lastName)=> Regex.IsMatch(lastName, REGEX_LASTNAME);
+        public bool ValidateEmail(string mail) => Regex.IsMatch(mail, REGEX_EMAIL);
+        public bool ValidatePhoneNumber(string phoneNumber)=>Regex.IsMatch(phoneNumber, REGEX_PHONENUMBER);
+        public bool ValidatePassword(string password)=> Regex.IsMatch(password, REGEX_PASSWORD);
+
+
+
         private string message;
         public ValidateUserDetails()
         {
@@ -21,8 +29,10 @@ namespace UserRegistration
         {
             this.message = message;
         }
-        public bool ValidateFirstName(string firstName)
+
+       /* public bool ValidateFirstName(string firstName)
         {
+            
             try
             {
                 if(firstName == null)
@@ -96,8 +106,8 @@ namespace UserRegistration
                 {
                     throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.EMPTY_PHONE_NUMBER, "Empty Phone Number");
                 }
-                Regex regex = new Regex(REGEX_PHONENUMBER);
-                return regex.IsMatch(phoneNumber);
+                Regex.IsMatch(phoneNumber, REGEX_PHONENUMBER);
+                return true;
             }
             catch(NullReferenceException)
             {
@@ -126,6 +136,7 @@ namespace UserRegistration
                 throw new ValidateUserDetailsCustomException(ValidateUserDetailsCustomException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
             }
         }
+       */
     }
 }
 

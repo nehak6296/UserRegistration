@@ -7,7 +7,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {           
             ValidateUserDetails validateUserDetails = new ValidateUserDetails();
-            Console.WriteLine("Your First Name Match :" + validateUserDetails.ValidateFirstName("neha"));
+            Console.WriteLine("Your First Name Match :" + validateUserDetails.ValidateFirstName("Neha"));
             Console.WriteLine("Your Last Name Match :" + validateUserDetails.ValidateLastName("Kotarwar"));
             Console.WriteLine("Your Mail Match :" + validateUserDetails.ValidateEmail("abc.xyz@bl.co.in"));
             Console.WriteLine("Your Phone Number Match :" + validateUserDetails.ValidatePhoneNumber("91 9919819801"));
